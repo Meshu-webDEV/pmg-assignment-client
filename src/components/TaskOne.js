@@ -70,13 +70,19 @@ const TaskOne = () => {
           </p>
         </div>
         {/* Action */}
-        <div className="flex justify-between pb-8">
-          <Button
-            onClick={getSearch}
-            variant="purple"
-            icon={false}
-            text="Get Search Results"
-          />
+        <div className="flex flex-col space-y-2 pb-8">
+          <div>
+            <Button
+              onClick={getSearch}
+              variant="purple"
+              icon={false}
+              text="Get Search Results"
+            />
+          </div>
+          <span className="text-xs  italic">
+            If you get no results, API might be sleeping. Request again. (API is
+            hosted on a free tier)
+          </span>
         </div>
         {/* Content */}
         <div className="">
