@@ -37,12 +37,12 @@ const TaskOne = () => {
 
   const renderResults = () => {
     return results.simple.map((result, i) => (
-      <TaskOneItem key={i} data={result} />
+      <TaskOneItem key={i} data={result} index={i} />
     ));
   };
 
   return (
-    <div className="relative bg-blue_light min-h-screen overflow-y-scroll scroll w-full flex flex-col space-y-8 py-8 items-center text-white">
+    <div className="relative bg-blue_light min-h-screen w-full flex flex-col space-y-8 py-8 items-center text-white">
       {/* Title */}
       <h1 className="text-8xl font-montserrat font-black ">TASK ONE</h1>
       <section className="px-28 flex flex-col space-y-8">

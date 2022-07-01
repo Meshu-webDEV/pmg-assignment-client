@@ -2,7 +2,7 @@ import React from "react";
 import { Icon, ICON_NAMES } from "../lib/icons";
 import { formatDate } from "../lib/utils";
 
-const TaskOneItem = ({ data }) => {
+const TaskOneItem = ({ data, index }) => {
   const determineIcon = (kind) => {
     switch (kind) {
       case "song":
@@ -21,7 +21,13 @@ const TaskOneItem = ({ data }) => {
   return (
     <div className="relative flex bg-blue_dark pl-5">
       <div className="absolute p-2 bg-blue_dark bottom-full left-0">
-        <div className="">{determineIcon(data.kind)}</div>
+        <div className="flex space-x-2 justify-center items-center">
+          <span className="opacity-75">{determineIcon(data.kind)}</span>
+          <span className="text-sm capitalize">{data.kind}</span>
+        </div>
+      </div>
+      <div className="absolute pr-2 right-full font-bold font-montserrat text-lg">
+        #{index + 1}
       </div>
       {/* first */}
       <div className="flex flex-col py-3 grow">
@@ -50,7 +56,12 @@ const TaskOneItem = ({ data }) => {
         </span>
       </div>
       {/* third */}
-      <img className="shrink" src={data.artworkUrl100} alt="track artwork" />
+      <img
+        className="shrink aspect-square w-16 object-cover"
+        style={{ maxWidth: "66px" }}
+        src={data.artworkUrl100}
+        alt="track artwork"
+      />
     </div>
   );
 };
