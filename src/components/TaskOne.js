@@ -75,7 +75,7 @@ const TaskOne = () => {
             onClick={getSearch}
             variant="purple"
             icon={false}
-            text="Search"
+            text="Get Search Results"
           />
         </div>
         {/* Content */}
